@@ -1,0 +1,34 @@
+$colors: (red,orange,yellow,black,green,blue,purple);
+$z_index: (1,2,1,0,1,2,1);
+$init_x:0px;
+$init_y:360px;
+
+
+
+@mixin box($init_x, $init_y, $diff, $colors, $z_index){
+  border: 3px solid black;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  height: 100px;
+  line-height: 100px;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+
+  $qty: length($colors);
+  @for $i from 1 through ($qty){
+    &.b#{$i}{
+      background: nth($colors,$i);
+      left: $init_x + ($i - 1) * $diff;
+      top: $init_y - ($i - 1) * $diff;
+      z-index: nth($z_index,$i);
+    }
+  }
+
+}
+
+.box{
+  @include box($init_x, $init_y, 60, $colors, $z_index);
+}
+
