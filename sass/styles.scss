@@ -1,34 +1,114 @@
-$colors: (red,orange,yellow,black,green,blue,purple);
-$z_index: (1,2,1,0,1,2,1);
-$init_x:0px;
-$init_y:360px;
+$bottom_pos: 0px;
+$left_pos: 255px;
+
+.reloj{
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: gray;
+  border: 5px solid black;
+  margin-left: 0;
+  margin-top: 0;
+}
 
 
-
-@mixin box($init_x, $init_y, $diff, $colors, $z_index){
-  border: 3px solid black;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  height: 100px;
-  line-height: 100px;
-  position: absolute;
-  text-align: center;
-  width: 100px;
-
-  $qty: length($colors);
-  @for $i from 1 through ($qty){
-    &.b#{$i}{
-      background: nth($colors,$i);
-      left: $init_x + ($i - 1) * $diff;
-      top: $init_y - ($i - 1) * $diff;
-      z-index: nth($z_index,$i);
+@mixin numero(){
+  height: 250px;
+  color: black;
+  font-size: 50px;
+  
+  line-height: 80px;
+  position: fixed;
+  margin-left: $left_pos;
+  top: $bottom_pos;
+  $limit: 12;
+  transform-origin: bottom left;
+  @for $i from 1 through ($limit){
+    &.n#{$i}{
+      transform: rotate($i * 30deg);
     }
+  }
+}
+
+.numero{
+  @include numero();
+}
+
+.aguja{
+  height: 230px;
+  background: black;
+  transform-origin: bottom left;
+  position: fixed;
+  left: $left_pos;
+  top: $bottom_pos + 20px;
+}
+
+.horero{
+  width: 10px;
+  transform: rotate(30deg);
+}
+
+.minutero{
+  width: 5px;
+  transform: rotate(60deg);
+}
+
+.segundero{
+  width: 3px;
+  transform: rotate(90deg);
+}
+
+.digital{
+  &.div{
+    width: 30px;
+    background: black;
   }
 
 }
 
-.box{
-  @include box($init_x, $init_y, 60, $colors, $z_index);
-}
+/*
 
+set time interval(function, time);
+
+<div class="reloj">
+            <div class="numero n1">
+                <div>1</div>
+            </div>  
+            <div class="numero n2">
+                <div>2</div>
+            </div>
+            <div class="numero n3">
+                <div>3</div>
+            </div>
+            <div class="numero n4">
+                <div>4</div>
+            </div>
+            <div class="numero n5">
+                <div>5</div>
+            </div>
+            <div class="numero n6">
+                <div>6</div>
+            </div>
+            <div class="numero n7">
+                <div>7</div>
+            </div>
+            <div class="numero n8">
+                <div>8</div>
+            </div>
+            <div class="numero n9">
+                <div>9</div>
+            </div>
+            <div class="numero n10">
+                <div>10</div>
+            </div>
+            <div class="numero n11">
+                <div>11</div>
+            </div>
+            <div class="numero n12">
+                <div>12</div>
+            </div>
+            <div class="aguja horero"></div>
+            <div class="aguja minutero"></div>
+            <div class="aguja segundero"></div>
+            
+        </div>*/
