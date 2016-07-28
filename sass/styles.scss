@@ -18,7 +18,7 @@ $left_pos: 255px;
   font-size: 50px;
   
   line-height: 80px;
-  position: fixed;
+  position: absolute;
   margin-left: $left_pos;
   top: $bottom_pos;
   $limit: 12;
@@ -38,33 +38,31 @@ $left_pos: 255px;
   height: 230px;
   background: black;
   transform-origin: bottom left;
-  position: fixed;
+  position: absolute;
   left: $left_pos;
   top: $bottom_pos + 20px;
 }
 
 .horero{
   width: 10px;
-  transform: rotate(30deg);
+  //transform: rotate(30deg);
 }
 
 .minutero{
   width: 5px;
-  transform: rotate(60deg);
+  //transform: rotate(60deg);
 }
 
 .segundero{
   width: 3px;
-  transform: rotate(90deg);
+  //transform: rotate(90deg);
 }
 
 .digital{
-  &.div{
-    width: 30px;
-    background: black;
-  }
-
+  font-size: 100px;
 }
+
+
 
 /*
 
@@ -110,5 +108,11 @@ set time interval(function, time);
             <div class="aguja horero"></div>
             <div class="aguja minutero"></div>
             <div class="aguja segundero"></div>
+
+<div class="digital">
+                <div class="hora">4</div>
+                <div class="dot">:</div>
+                <div class="minuto">00</div>
+            </div>
             
         </div>*/

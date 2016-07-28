@@ -12,7 +12,7 @@
   color: black;
   font-size: 50px;
   line-height: 80px;
-  position: fixed;
+  position: absolute;
   margin-left: 255px;
   top: 0px;
   transform-origin: bottom left; }
@@ -45,25 +45,21 @@
   height: 230px;
   background: black;
   transform-origin: bottom left;
-  position: fixed;
+  position: absolute;
   left: 255px;
   top: 20px; }
 
 .horero {
-  width: 10px;
-  transform: rotate(30deg); }
+  width: 10px; }
 
 .minutero {
-  width: 5px;
-  transform: rotate(60deg); }
+  width: 5px; }
 
 .segundero {
-  width: 3px;
-  transform: rotate(90deg); }
+  width: 3px; }
 
-.digital.div {
-  width: 30px;
-  background: black; }
+.digital {
+  font-size: 100px; }
 
 /*
 
@@ -109,5 +105,11 @@ set time interval(function, time);
             <div class="aguja horero"></div>
             <div class="aguja minutero"></div>
             <div class="aguja segundero"></div>
+
+<div class="digital">
+                <div class="hora">4</div>
+                <div class="dot">:</div>
+                <div class="minuto">00</div>
+            </div>
             
         </div>*/
