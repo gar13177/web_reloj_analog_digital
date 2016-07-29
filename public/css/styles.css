@@ -44,7 +44,7 @@
 .aguja {
   height: 230px;
   background: black;
-  transform-origin: bottom left;
+  transform-origin: bottom center;
   position: absolute;
   left: 255px;
   top: 20px; }
@@ -56,60 +56,8 @@
   width: 5px; }
 
 .segundero {
-  width: 3px; }
+  width: 3px;
+  background: red; }
 
 .digital {
   font-size: 100px; }
-
-/*
-
-set time interval(function, time);
-
-<div class="reloj">
-            <div class="numero n1">
-                <div>1</div>
-            </div>  
-            <div class="numero n2">
-                <div>2</div>
-            </div>
-            <div class="numero n3">
-                <div>3</div>
-            </div>
-            <div class="numero n4">
-                <div>4</div>
-            </div>
-            <div class="numero n5">
-                <div>5</div>
-            </div>
-            <div class="numero n6">
-                <div>6</div>
-            </div>
-            <div class="numero n7">
-                <div>7</div>
-            </div>
-            <div class="numero n8">
-                <div>8</div>
-            </div>
-            <div class="numero n9">
-                <div>9</div>
-            </div>
-            <div class="numero n10">
-                <div>10</div>
-            </div>
-            <div class="numero n11">
-                <div>11</div>
-            </div>
-            <div class="numero n12">
-                <div>12</div>
-            </div>
-            <div class="aguja horero"></div>
-            <div class="aguja minutero"></div>
-            <div class="aguja segundero"></div>
-
-<div class="digital">
-                <div class="hora">4</div>
-                <div class="dot">:</div>
-                <div class="minuto">00</div>
-            </div>
-            
-        </div>*/

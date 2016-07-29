@@ -16,14 +16,12 @@ $left_pos: 255px;
   height: 250px;
   color: black;
   font-size: 50px;
-  
   line-height: 80px;
   position: absolute;
   margin-left: $left_pos;
   top: $bottom_pos;
-  $limit: 12;
   transform-origin: bottom left;
-  @for $i from 1 through ($limit){
+  @for $i from 1 through (12){
     &.n#{$i}{
       transform: rotate($i * 30deg);
     }
@@ -37,7 +35,7 @@ $left_pos: 255px;
 .aguja{
   height: 230px;
   background: black;
-  transform-origin: bottom left;
+  transform-origin: bottom center;
   position: absolute;
   left: $left_pos;
   top: $bottom_pos + 20px;
@@ -45,74 +43,17 @@ $left_pos: 255px;
 
 .horero{
   width: 10px;
-  //transform: rotate(30deg);
 }
 
 .minutero{
   width: 5px;
-  //transform: rotate(60deg);
 }
 
 .segundero{
   width: 3px;
-  //transform: rotate(90deg);
+  background: red;
 }
 
 .digital{
   font-size: 100px;
 }
-
-
-
-/*
-
-set time interval(function, time);
-
-<div class="reloj">
-            <div class="numero n1">
-                <div>1</div>
-            </div>  
-            <div class="numero n2">
-                <div>2</div>
-            </div>
-            <div class="numero n3">
-                <div>3</div>
-            </div>
-            <div class="numero n4">
-                <div>4</div>
-            </div>
-            <div class="numero n5">
-                <div>5</div>
-            </div>
-            <div class="numero n6">
-                <div>6</div>
-            </div>
-            <div class="numero n7">
-                <div>7</div>
-            </div>
-            <div class="numero n8">
-                <div>8</div>
-            </div>
-            <div class="numero n9">
-                <div>9</div>
-            </div>
-            <div class="numero n10">
-                <div>10</div>
-            </div>
-            <div class="numero n11">
-                <div>11</div>
-            </div>
-            <div class="numero n12">
-                <div>12</div>
-            </div>
-            <div class="aguja horero"></div>
-            <div class="aguja minutero"></div>
-            <div class="aguja segundero"></div>
-
-<div class="digital">
-                <div class="hora">4</div>
-                <div class="dot">:</div>
-                <div class="minuto">00</div>
-            </div>
-            
-        </div>*/

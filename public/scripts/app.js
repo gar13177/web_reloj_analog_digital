@@ -7,16 +7,13 @@ var deg_s = 0;
 
 function start(){
   document.getElementById("selector").addEventListener("change", addActivityItem, false);
-  
 }
 
 function addActivityItem(){
-  //option is selected
   reloj = selector.options[selector.selectedIndex].value;
+  change_clock();
   render();
 }
-
-
 
 function changeTime(){
   deg_s = deg_s + 6;
@@ -31,8 +28,11 @@ function changeTime(){
   if (deg_h >= 360){
     deg_h = deg_h - 360;
   }
+  render();  
+}
+
+function render(){
   if (reloj === "1"){
-    
     var seg = document.getElementById("_segundero");
     seg.style.transform = "rotate(" + deg_s + "deg)";
 
@@ -49,14 +49,22 @@ function changeTime(){
 
     var text = ""+hora+" : "+min+" : "+seg;
     document.getElementById("_digital").innerHTML = text;
-
   }
 }
 
-function render(){
+
+function change_clock(){
   var html = "";
   if (reloj === "1"){
-    html = '<div class="reloj"><div class="numero n1"><div>1</div></div><div class="numero n2"><div>2</div></div><div class="numero n3"><div>3</div></div><div class="numero n4"><div>4</div></div><div class="numero n5"><div>5</div></div><div class="numero n6"><div>6</div></div><div class="numero n7"><div>7</div></div><div class="numero n8"><div>8</div></div><div class="numero n9"><div>9</div></div><div class="numero n10"><div>10</div></div><div class="numero n11"><div>11</div></div><div class="numero n12"><div>12</div></div><div id="_horero" class="aguja horero"></div><div id="_minutero" class="aguja minutero"></div><div id="_segundero" class="aguja segundero"></div>'
+    html = '<div class="reloj">';
+    for (i = 1; i <= 12; i++) { 
+      html += '<div class="numero n'+i+'">'+i+'</div>';
+    }
+    
+    html += '<div id="_horero" class="aguja horero"></div>';
+    html += '<div id="_minutero" class="aguja minutero"></div>';
+    html += '<div id="_segundero" class="aguja segundero"></div>';
+    html += '</div>';
   }else{
     html = '<div id="_digital" class="digital"></div>'
   }
@@ -64,6 +72,6 @@ function render(){
   viewport.innerHTML = html;
 }
 
-render();
+change_clock();
 window.addEventListener("load", start, false);
 window.setInterval(changeTime, 1000);
